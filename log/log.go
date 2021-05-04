@@ -3,8 +3,8 @@
 package log
 
 import (
+	"errors"
 	"fmt"
-	"os"
 	"runtime"
 
 	"go.uber.org/zap"
@@ -27,7 +27,7 @@ var logLevels = map[string]zapcore.Level{
 func InitLogger(c *LogConfig) {
 	if c == nil {
 		fmt.Println("invalid log config")
-		os.Exit(-1)
+		panic(errors.New("invalid log config"))
 	}
 	c.SetDefault()
 	writeSyncer := getLogWriter(c)
