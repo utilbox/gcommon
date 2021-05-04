@@ -1,3 +1,5 @@
+// Package log wraps zap and provide an easy way to use zap to log to local file.
+// For more details about zap, see https://github.com/uber-go/zap .
 package log
 
 import (

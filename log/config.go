@@ -1,6 +1,6 @@
 package log
 
-import "encoding/json"
+import "github.com/utilbox/gcommon/gson"
 
 type LogConfig struct {
 	Level      string
@@ -39,6 +39,6 @@ func (l *LogConfig) String() string {
 		return "nil"
 	}
 
-	raw, _ := json.Marshal(l)
+	raw, _ := gson.Marshal(l)
 	return string(raw)
 }
